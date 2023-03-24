@@ -6,13 +6,13 @@
       $this->urls = [];
     }
   
-    public function shorten($longUrl) {
-      $shortUrl = $this->generateShortUrl();
+    public function shortening($longUrl) {
+      $shortUrl = $this->generatingShortUrl();
       $this->urls[$shortUrl] = $longUrl;
       return $shortUrl;
     }
   
-    public function expand($shortUrl) {
+    public function expanding($shortUrl) {
       if (isset($this->urls[$shortUrl])) {
         return $this->urls[$shortUrl];
       } else {
@@ -20,7 +20,7 @@
       }
     }
   
-    private function generateShortUrl() {
+    private function generatingShortUrl() {
       $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
       $shortUrl = '';
       for ($i = 0; $i < 6; $i++) {
@@ -32,10 +32,10 @@
   }
 
     $shortener = new UrlShortener();
-    $shortUrl = $shortener->shorten('https://www.example.com/somekigaliguysneedsomethingsexpensive');
+    $shortUrl = $shortener->shortening('https://www.example.com/somekigaliguysneedsomethingsexpensive');
     echo 'Short URL: ' . $shortUrl . "<br>";
 
-    $longUrl = $shortener->expand($shortUrl);
+    $longUrl = $shortener->expanding($shortUrl);
     echo 'Long URL: ' . $longUrl . "<br>";
 
   
