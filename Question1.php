@@ -11,5 +11,6 @@ $orginalArray = [1, 2, 3, 4, 5,6];
 echo "Original array: ";
 print_r($orginalArray); 
 echo "<br>";
+
 echo "Modified array: ";
 $modifiedArray = swapArray($orginalArray, 0, 4);
